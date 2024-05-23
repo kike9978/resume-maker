@@ -75,6 +75,7 @@ function App() {
 
   return (
     <>
+      <button onClick={() => window.print()}>Imprimir</button>
 
       <h1
         className='text-cyan-700 font-bold text-2xl'>Resumé maker</h1>
