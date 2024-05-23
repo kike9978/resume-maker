@@ -56,9 +56,97 @@ function WorkExperience({ title, company, description, date }) {
   )
 }
 
+
+function WorkForm({ onSubmit }) {
+
+  const emptyWork = {
+    title: "",
+    company: "",
+    description: "",
+    date: ""
+  }
+
+  const [nextWorkInfo, setNextWorkInfo] = useState(emptyWork)
+
+
+  return (
+    <section className='bg-blue-300'>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          onSubmit(nextWorkInfo)
+          setNextWorkInfo({ ...emptyWork })
+        }
+        }>
+
+        <label htmlFor="">
+          Job Title: {" "}
+          <input
+            type="text"
+            name='jobTitle'
+            value={nextWorkInfo.title}
+            onChange={(e) => {
+              setNextWorkInfo({ ...nextWorkInfo, title: e.target.value })
+            }} />
+        </label>
+        <label htmlFor="">
+          Company: {" "}
+          <input
+            type="text"
+            name='jobTitle'
+            value={nextWorkInfo.company}
+            onChange={(e) => {
+              setNextWorkInfo({ ...nextWorkInfo, company: e.target.value })
+            }} />
+        </label>
+        <label htmlFor="">
+          Description: {" "}
+
+          <textarea name='jobTitle'
+            value={nextWorkInfo.description}
+            onChange={(e) => {
+              setNextWorkInfo({ ...nextWorkInfo, description: e.target.value })
+            }} />
+        </label>
+        <label htmlFor="">
+          Date: {" "}
+          <input
+            type="text"
+            name='jobDate'
+            value={nextWorkInfo.date}
+            onChange={(e) => {
+              setNextWorkInfo({ ...nextWorkInfo, date: e.target.value })
+            }} />
+        </label>
+
+
+
+        <button>Agregar Experiencia</button>
+      </form>
+      <p>{nextWorkInfo.title}</p>
+    </section>
+
+  )
+}
+
 function App() {
   const [cv, setCV] = useState(initialCV)
   const [isEditing, setIsEditing] = useState(true)
+  const [works, setWorks] = useState(workData)
+
+
+
+  function handleCreateExperience(nextWorkInfo) {
+    setWorks([
+      ...works,
+      {
+        id: nextId++,
+        title: nextWorkInfo.title,
+        company: nextWorkInfo.company,
+        description: nextWorkInfo.description,
+        date: nextWorkInfo.date,
+      }])
+  }
 
   return (
     <>
@@ -112,6 +200,7 @@ function App() {
               />
               <span>Remember starting with https://.</span>
             </label>
+            <WorkForm onSubmit={handleCreateExperience} />
           </aside>}
         <main>
           <section>
@@ -122,7 +211,7 @@ function App() {
           <hr />
           <section>
             <h2>Work experience</h2>
-            {workData.map(work => {
+            {works.map(work => {
               return (
                 <WorkExperience
                   title={work.title}
