@@ -1,11 +1,13 @@
 import WorkExperience from "./WorkExperience"
 
-export default function CV({ cv, works }) {
+export default function CV({ cv }) {
+    const works = cv.works
 
     return (
-        <main>
+        <main className="print:w-full">
             <section>
-                <p className="text-3xl">{`${cv.firstName} ${cv.lastName}`}</p>
+                <h1 className="text-3xl">{`${cv.firstName} ${cv.lastName}`}</h1>
+                <h2>{cv.workTitle}</h2>
                 <div className="flex text-sm text-slate-400 gap-2 w-full justify-center">
                     <p>{cv.email}</p>
                     <p>{cv.phone}</p>
