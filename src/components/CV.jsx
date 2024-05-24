@@ -7,7 +7,7 @@ export default function CV({ cv }) {
 
     return (
         <main className="print:w-full overflow-y-auto flex-grow p-4">
-            <section>
+            <section className="text-center">
                 <h1 className="text-3xl">{`${cv.firstName} ${cv.lastName}`}</h1>
                 <h2>{cv.workTitle}</h2>
                 <div className="flex text-sm text-slate-400 gap-2 w-full justify-center">
@@ -47,9 +47,9 @@ export default function CV({ cv }) {
             <hr />
             <section>
                 <h2>Skills:</h2>
-                <div className="flex gap-4">
+                <div className="flex gap-2">
                     {skills.map(skill => {
-                        return <p key={skill.id}>{skill.title}</p>
+                        return <p key={skill.id} className="bg-slate-100 text-slate-800 rounded-2xl border border-solid border-slate-700 px-2 py-1">{skill.title}</p>
                     })}
                 </div>
             </section>

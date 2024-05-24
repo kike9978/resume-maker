@@ -54,7 +54,7 @@ const mockData = {
       date: ""
     },
   ],
-  educations: [{ id: 0, title: "Diseño de interación y animación", institution: "Ibero Puebla" }],
+  educations: [{ id: 0, title: "Diseño de interación y animación", institution: "Ibero Puebla", degree: "BA", date: "2015 - 2019" }],
   skills: [{ id: 0, title: "after effects" }, { id: 1, title: "drawing" }]
 
 }
@@ -94,7 +94,7 @@ function App() {
       </button>
       <button className='print:hidden bg-black text-white'
         onClick={() => setCV({ ...initialCV })}>
-        Empty from
+        Empty form
       </button>
 
       <h1

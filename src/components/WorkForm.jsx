@@ -1,4 +1,6 @@
 import { useState } from "react"
+import Input from "./Input"
+import Textarea from "./Textarea"
 
 
 export default function WorkForm({ onSubmit }) {
@@ -24,48 +26,40 @@ export default function WorkForm({ onSubmit }) {
                 }
                 }>
 
-                <label htmlFor="">
-                    Job Title: {" "}
-                    <input
-                        type="text"
-                        name='jobTitle'
-                        value={nextWorkInfo.title}
-                        onChange={(e) => {
-                            setNextWorkInfo({ ...nextWorkInfo, title: e.target.value })
-                        }} />
-                </label>
-                <label htmlFor="">
-                    Company: {" "}
-                    <input
-                        type="text"
-                        name='jobTitle'
-                        value={nextWorkInfo.company}
-                        onChange={(e) => {
-                            setNextWorkInfo({ ...nextWorkInfo, company: e.target.value })
-                        }} />
-                </label>
-                <label htmlFor="">
-                    Description: {" "}
+                <Input
+                    label={"Job Title"}
+                    name={"jobTitle"}
+                    value={nextWorkInfo.title}
+                    onChange={(e) => {
+                        setNextWorkInfo({ ...nextWorkInfo, title: e.target.value })
+                    }}
+                />
+                <Input
+                    label={"Company"}
+                    name={"company"}
+                    value={nextWorkInfo.company}
+                    onChange={(e) => {
+                        setNextWorkInfo({ ...nextWorkInfo, company: e.target.value })
+                    }}
+                />
 
-                    <textarea name='jobTitle'
-                        value={nextWorkInfo.description}
-                        onChange={(e) => {
-                            setNextWorkInfo({ ...nextWorkInfo, description: e.target.value })
-                        }} />
-                </label>
-                <label htmlFor="">
-                    Date: {" "}
-                    <input
-                        type="text"
-                        name='jobDate'
-                        value={nextWorkInfo.date}
-                        onChange={(e) => {
-                            setNextWorkInfo({ ...nextWorkInfo, date: e.target.value })
-                        }} />
-                </label>
+                <Textarea
+                    label={"Description"}
+                    name={"description"}
+                    value={nextWorkInfo.description}
+                    onChange={(e) => {
+                        setNextWorkInfo({ ...nextWorkInfo, description: e.target.value })
+                    }}
+                />
 
-
-
+                <Input
+                    label={"Date"}
+                    name={"date"}
+                    value={nextWorkInfo.date}
+                    onChange={(e) => {
+                        setNextWorkInfo({ ...nextWorkInfo, date: e.target.value })
+                    }}
+                />
                 <button>Agregar Experiencia</button>
             </form>
         </section>

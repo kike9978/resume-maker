@@ -2,15 +2,15 @@ export default function WorkExperience({ title, company, description, date }) {
 
 
     return (
-        <article className="p-10">
-            <div className="flex items-baseline">
+        <article className="py-10">
+            <div className="flex items-baseline justify-between">
                 <div className="flex flex-col">
                     <h3 className="text-xl">
                         {title}
                     </h3>
-                    <p>{company}</p>
+                    <p className="italic text-slate-500">{company}</p>
                 </div>
-                <p>{date}</p>
+                <p className="text-sm text-slate-400">{date}</p>
             </div>
             <p>{description}</p>
         </article>
