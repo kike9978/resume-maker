@@ -11,36 +11,9 @@ const initialCV = {
   email: "",
   website: "",
   phone: "",
-  works: [
-    {
-      id: nextId++,
-      title: "UX designer",
-      company: "Sisu Technologies",
-      description: "Es hora de los besos de chocolate",
-      date: "2022 - 2024"
-    },
-    {
-      id: nextId++,
-      title: "UX designer",
-      company: "Freelancer",
-      description: "Es hora de los besos de chocolate",
-      date: ""
-    },
-    {
-      id: nextId++,
-      title: "UX designer",
-      company: "Sisu Technologies",
-      description: "Es hora de los besos de chocolate",
-      date: ""
-    },
-    {
-      id: nextId++,
-      title: "UX designer",
-      company: "Sisu Technologies",
-      description: "Es hora de los besos de chocolate",
-      date: ""
-    },
-  ]
+  works: [],
+  educations: [],
+  skills: []
 
 }
 
@@ -80,7 +53,9 @@ const mockData = {
       description: "Es hora de los besos de chocolate",
       date: ""
     },
-  ]
+  ],
+  educations: [{ id: 0, title: "Diseño de interación y animación", institution: "Ibero Puebla" }],
+  skills: [{ id: 0, title: "after effects" }, { id: 1, title: "drawing" }]
 
 }
 
@@ -124,7 +99,7 @@ function App() {
 
       <h1
         className='text-cyan-700 font-bold text-2xl print:hidden'>Resumé maker</h1>
-      <div className="flex">
+      <div className="flex flex-grow overflow-hidden">
         <button
           className='print:hidden'
           onClick={() => setIsEditing(!isEditing)}>
