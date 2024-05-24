@@ -16,7 +16,7 @@ export default function WorkForm({ onSubmit }) {
 
 
     return (
-        <section className='bg-blue-300'>
+        <section className='border border-solid rounded-xl border-slate-200 p-2'>
             <form
                 className="flex flex-col"
                 onSubmit={(e) => {

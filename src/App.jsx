@@ -84,21 +84,23 @@ function App() {
 
   return (
     <>
-      <button className='print:hidden'
-        onClick={() => window.print()}>
-        Imprimir
-      </button>
-      <button className='print:hidden bg-black text-white'
-        onClick={() => setCV({ ...mockData })}>
-        Fill with mockup Data
-      </button>
-      <button className='print:hidden bg-black text-white'
-        onClick={() => setCV({ ...initialCV })}>
-        Empty form
-      </button>
-
       <h1
         className='text-cyan-700 font-bold text-2xl print:hidden'>Resumé maker</h1>
+      <div className="flex gap-4">
+        <button className='print:hidden'
+          onClick={() => window.print()}>
+          Imprimir
+        </button>
+        <button className='print:hidden bg-black text-white'
+          onClick={() => setCV({ ...mockData })}>
+          Fill with mockup Data
+        </button>
+        <button className='print:hidden bg-black text-white'
+          onClick={() => setCV({ ...initialCV })}>
+          Empty form
+        </button>
+      </div>
+
       <div className="flex flex-grow overflow-hidden">
         <button
           className='print:hidden'

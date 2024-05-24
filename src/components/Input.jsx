@@ -1,14 +1,15 @@
 export default function Input({ value, name, onChange, placeholder, label, type = "text", suggestion }) {
     return (
-        <label htmlFor="">
+        <label htmlFor="" className="flex flex-col ">
             {label}: {" "}
             <input
+                className="truncate border border-solid border-slate-300 rounded px-1"
                 type={type}
                 name={name}
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder} />
-            {suggestion && <span>{suggestion}</span>}
+            {suggestion && <span className="text-sm text-slate-500">{suggestion}</span>}
         </label>
     )
 }

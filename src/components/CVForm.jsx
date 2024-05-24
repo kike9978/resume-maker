@@ -5,7 +5,7 @@ import WorkFormItem from "./WorkFormItem"
 export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExperience, handleCreateExperience }) {
     return (
         <aside
-            className='flex flex-col shadow-md shadow-blue-100 m-5 rounded-lg p-4 print:hidden overflow-y-auto'>
+            className='flex flex-col shadow-md shadow-blue-100 m-5 rounded-lg p-4 print:hidden overflow-y-auto gap-6'>
             <Input
                 label={"First name(s)"}
                 name={"firstName"}
@@ -38,19 +38,12 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
             <Input
                 label={"Phone number"}
                 name={"phone"}
-                type="number"
+                type="phone"
                 value={cv.phone}
                 onChange={(e) => setCV({ ...cv, phone: e.target.value })}
                 placeholder={"684168658"}
             />
-            <Input
-                label={"Phone number"}
-                name={"phone"}
-                type="number"
-                value={cv.phone}
-                onChange={(e) => setCV({ ...cv, phone: e.target.value })}
-                placeholder={"684168658"}
-            />
+
             <Input
                 label={"Website"}
                 name={"website"}
