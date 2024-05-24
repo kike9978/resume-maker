@@ -45,14 +45,16 @@ export default function CV({ cv }) {
 
             </section>
             <hr />
-            <section>
+
+            {skills && <section>
                 <h2>Skills:</h2>
                 <div className="flex gap-2">
                     {skills.map(skill => {
                         return <p key={skill.id} className="bg-slate-100 text-slate-800 rounded-2xl border border-solid border-slate-700 px-2 py-1">{skill.title}</p>
                     })}
                 </div>
-            </section>
+            </section>}
+
 
         </main>)
 }

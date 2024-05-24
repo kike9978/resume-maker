@@ -1,8 +1,24 @@
 import Input from "./Input"
+import Textarea from "./Textarea"
 import WorkForm from "./WorkForm"
 import WorkFormItem from "./WorkFormItem"
 
 export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExperience, handleCreateExperience }) {
+
+    const skills = cv.skills.map(skill => skill.title).join(", ")
+
+
+    function handleOnSkillsChange(e) {
+        let id = 5
+        const nextSkills = e.target.value.split(", ")
+        const finalSkills = []
+        nextSkills.forEach(skill => finalSkills.push({ id: id++, title: skill }))
+
+        // TODO check if id conflict
+
+        setCV({ ...cv, skills: finalSkills })
+        console.log(cv.skills)
+    }
     return (
         <aside
             className='flex flex-col shadow-md shadow-blue-100 m-5 rounded-lg p-4 print:hidden overflow-y-auto gap-6'>
@@ -77,6 +93,12 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                 )}
 
             </details>
+
+            <Textarea
+                label={"Skills"}
+                name={"skills"}
+                value={skills}
+                onChange={handleOnSkillsChange} />
 
         </aside>
     )
