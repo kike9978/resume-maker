@@ -145,7 +145,7 @@ function App() {
 
       </div>
 
-      <div className="flex flex-grow overflow-hidden">
+      <div className="flex flex-grow overflow-hidden flex-col sm:flex-row">
         {isEditing &&
 
           <CVForm
