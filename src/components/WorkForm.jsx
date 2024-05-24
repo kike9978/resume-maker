@@ -4,7 +4,9 @@ import Textarea from "./Textarea"
 import Button from "./Button"
 
 
-export default function WorkForm({ onSubmit }) {
+export default function WorkForm({ onSubmit, work }) {
+
+    const isEditable = work && true
 
     const emptyWork = {
         title: "",
@@ -13,7 +15,7 @@ export default function WorkForm({ onSubmit }) {
         date: ""
     }
 
-    const [nextWorkInfo, setNextWorkInfo] = useState(emptyWork)
+    const [nextWorkInfo, setNextWorkInfo] = useState(work ? work : emptyWork)
 
 
     return (
@@ -23,7 +25,9 @@ export default function WorkForm({ onSubmit }) {
                 onSubmit={(e) => {
                     e.preventDefault()
                     onSubmit(nextWorkInfo)
-                    setNextWorkInfo({ ...emptyWork })
+
+                    !isEditable && setNextWorkInfo({ ...emptyWork })
+
                 }
                 }>
 
@@ -61,7 +65,9 @@ export default function WorkForm({ onSubmit }) {
                         setNextWorkInfo({ ...nextWorkInfo, date: e.target.value })
                     }}
                 />
-                <Button label={"Agregar Experiencia"} />
+
+                <Button label={isEditable ? "Edit" : "Agregar Experiencia"}
+                />
             </form>
         </section>
 

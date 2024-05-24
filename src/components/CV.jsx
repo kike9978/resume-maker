@@ -1,7 +1,10 @@
 import WorkExperience from "./WorkExperience"
 
 function EmptyCV() {
-    return (<div className="flex justify-center items-center h-full">Fill the form</div>)
+    return (<div className="flex justify-center items-center h-full flex-col">
+        <p className="text-xl">No information to show</p>
+        <p className="text-slate-600">Fill the form to create your resumé</p>
+    </div>)
 }
 
 export default function CV({ cv }) {
@@ -13,7 +16,7 @@ export default function CV({ cv }) {
 
     return (
 
-        <main className="print:w-full overflow-y-auto flex-grow p-4 bg-white m-5">
+        <main className="print:w-full overflow-y-auto flex-grow p-4 bg-white m-5 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300">
             {isEmpty ? <EmptyCV /> :
                 <>
                     <section className="text-center">

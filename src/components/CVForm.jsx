@@ -86,6 +86,9 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                             description={work.description}
                             date={work.date}
                             company={work.company}
+                            id={work.id}
+                            setCV={setCV}
+                            cv={cv}
 
 
                         />
