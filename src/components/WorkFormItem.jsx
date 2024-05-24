@@ -1,7 +1,6 @@
 import { useState } from "react"
 import Button from "./Button"
 import WorkForm from "./WorkForm"
-import CV from "./CV"
 
 export default function WorkFormItem({ title, company, date, description, id, setCV, cv }) {
     const [isEditable, setIsEditable] = useState(false)
