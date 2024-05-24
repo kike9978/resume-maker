@@ -9,7 +9,7 @@ export default function Input({ value, name, onChange, placeholder, label, type 
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder} />
-            {suggestion && <span className="text-sm text-slate-500">{suggestion}</span>}
+            {suggestion && <span className="text-xs text-slate-500">{suggestion}</span>}
         </label>
     )
 }

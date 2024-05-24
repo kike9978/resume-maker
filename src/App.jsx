@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import CV from './components/CV'
 import CVForm from './components/CVForm'
+import Button from './components/Button'
 
 let nextId = 0
 
@@ -55,7 +56,56 @@ const mockData = {
     },
   ],
   educations: [{ id: 0, title: "Diseño de interación y animación", institution: "Ibero Puebla", degree: "BA", date: "2015 - 2019" }],
-  skills: [{ id: 0, title: "after effects" }, { id: 1, title: "drawing" }]
+  skills: [
+    {
+      id: 0,
+      title: "After Effects"
+    },
+    {
+      id: 1,
+      title: "Drawing"
+    },
+    {
+      id: 2,
+      title: "Maya"
+    },
+    {
+      id: 3,
+      title: "Blender"
+    },
+    {
+      id: 4,
+      title: "Illustrator"
+    },
+    {
+      id: 5,
+      title: "HTML/CSS"
+    },
+    {
+      id: 6,
+      title: "Javascript"
+    },
+    {
+      id: 7,
+      title: "React"
+    },
+    {
+      id: 8,
+      title: "Photoshop"
+    },
+    {
+      id: 9,
+      title: "Premiere"
+    },
+    {
+      id: 10,
+      title: "Astro"
+    },
+    {
+      id: 10,
+      title: "Animate CC"
+    },
+  ]
 
 }
 
@@ -87,26 +137,15 @@ function App() {
       <h1
         className='text-cyan-700 font-bold text-2xl print:hidden'>Resumé maker</h1>
       <div className="flex gap-4">
-        <button className='print:hidden'
-          onClick={() => window.print()}>
-          Imprimir
-        </button>
-        <button className='print:hidden bg-black text-white'
-          onClick={() => setCV({ ...mockData })}>
-          Fill with mockup Data
-        </button>
-        <button className='print:hidden bg-black text-white'
-          onClick={() => setCV({ ...initialCV })}>
-          Empty form
-        </button>
+        <Button onClick={() => window.print()} label={"Imprimir"} />
+        <Button onClick={() => setCV({ ...mockData })} label={"Fill with mockup data"} />
+        <Button onClick={() => setCV({ ...initialCV })} label={"Empty form"} />
+        <Button onClick={() => setIsEditing(!isEditing)} label={isEditing ? "Save" : "Edit"} />
+
+
       </div>
 
       <div className="flex flex-grow overflow-hidden">
-        <button
-          className='print:hidden'
-          onClick={() => setIsEditing(!isEditing)}>
-          {isEditing ? "Save" : "Edit"}
-        </button>
         {isEditing &&
 
           <CVForm

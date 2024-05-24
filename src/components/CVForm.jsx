@@ -1,3 +1,4 @@
+import Button from "./Button"
 import Input from "./Input"
 import Textarea from "./Textarea"
 import WorkForm from "./WorkForm"
@@ -9,7 +10,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
 
 
     function handleOnSkillsChange(e) {
-        let id = 5
+        let id = 0
         const nextSkills = e.target.value.split(", ")
         const finalSkills = []
         nextSkills.forEach(skill => finalSkills.push({ id: id++, title: skill }))
@@ -21,7 +22,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
     }
     return (
         <aside
-            className='flex flex-col shadow-md shadow-blue-100 m-5 rounded-lg p-4 print:hidden overflow-y-auto gap-6'>
+            className='flex flex-col shadow-md shadow-blue-100 m-5 rounded-lg p-4 print:hidden overflow-y-auto gap-6 basis-4/5 max-w-96 bg-white'>
             <Input
                 label={"First name(s)"}
                 name={"firstName"}
@@ -72,7 +73,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
 
             {isAddingExperience ?
                 <WorkForm onSubmit={handleCreateExperience} /> :
-                <button onClick={() => setIsAddingExperience(true)} className={"bg-black text-white"}>Agregar experiencia</button>
+                <Button onClick={() => setIsAddingExperience(true)} label={"Agregar experiencia"} />
             }
 
             <details>
@@ -98,7 +99,8 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                 label={"Skills"}
                 name={"skills"}
                 value={skills}
-                onChange={handleOnSkillsChange} />
+                onChange={handleOnSkillsChange}
+                suggestion={`Add each skills separating them by a comma and a space (, ) `} />
 
         </aside>
     )

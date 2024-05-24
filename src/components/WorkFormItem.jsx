@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Button from "./Button"
 
 export default function WorkFormItem({ title, company, date, description }) {
     const [isEditable, setIsEditable] = useState(false)
@@ -6,9 +7,8 @@ export default function WorkFormItem({ title, company, date, description }) {
         <article className="flex justify-between p-4">
 
             {isEditable ? "soy editable" : <p>{title}</p>}
+            <Button label={isEditable ? "Save" : "Edit"} onClick={() => setIsEditable(!isEditable)} />
 
-            <button
-                onClick={() => setIsEditable(!isEditable)}>{isEditable ? "Save" : "Edit"}</button>
         </article>
     )
 }

@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Input from "./Input"
 import Textarea from "./Textarea"
+import Button from "./Button"
 
 
 export default function WorkForm({ onSubmit }) {
@@ -60,7 +61,7 @@ export default function WorkForm({ onSubmit }) {
                         setNextWorkInfo({ ...nextWorkInfo, date: e.target.value })
                     }}
                 />
-                <button>Agregar Experiencia</button>
+                <Button label={"Agregar Experiencia"} />
             </form>
         </section>
 
