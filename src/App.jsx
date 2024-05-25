@@ -6,12 +6,15 @@ import Button from './components/Button'
 let nextId = 0
 
 const initialCV = {
-  firstName: "",
-  lastName: "",
-  workTitle: "",
-  email: "",
-  website: "",
-  phone: "",
+  generalInfo: {
+    firstName: "",
+    lastName: "",
+    workTitle: "",
+    email: "",
+    website: "",
+    phone: "",
+
+  },
   works: [],
   educations: [],
   skills: []
@@ -19,12 +22,15 @@ const initialCV = {
 }
 
 const mockData = {
-  firstName: "Jesús Enrique",
-  lastName: "Mendoza López",
-  workTitle: " UX designer | Front end developer",
-  email: "kike.mendoza9978@gmail.com",
-  website: "https://emendoza.me",
-  phone: "+52 229 4832068",
+  generalInfo: {
+    firstName: "Jesús Enrique",
+    lastName: "Mendoza López",
+    workTitle: " UX designer | Front end developer",
+    email: "kike.mendoza9978@gmail.com",
+    website: "https://emendoza.me",
+    phone: "+52 229 4832068",
+
+  },
   works: [
     {
       id: nextId++,

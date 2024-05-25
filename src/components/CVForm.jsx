@@ -9,6 +9,7 @@ import WorkFormItem from "./WorkFormItem"
 export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExperience, handleCreateExperience, handleCreateEducation, isAddingEducation, setIsAddingEducation }) {
 
     const skills = cv.skills.map(skill => skill.title).join(", ")
+    const generalInfo = cv.generalInfo;
 
 
     function handleOnSkillsChange(e) {
@@ -20,7 +21,6 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
         // TODO check if id conflict
 
         setCV({ ...cv, skills: finalSkills })
-        console.log(cv.skills)
     }
     return (
         <aside
@@ -31,46 +31,46 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                 <Input
                     label={"First name(s)"}
                     name={"firstName"}
-                    value={cv.firstName}
-                    onChange={(e) => setCV({ ...cv, firstName: e.target.value })}
+                    value={generalInfo.firstName}
+                    onChange={(e) => setCV({ ...cv, generalInfo: { ...generalInfo, firstName: e.target.value } })}
                     placeholder={"Juan"}
                 />
                 <Input
                     label={"Last name(s)"}
                     name={"lastName"}
-                    value={cv.lastName}
-                    onChange={(e) => setCV({ ...cv, lastName: e.target.value })}
+                    value={generalInfo.lastName}
+                    onChange={(e) => setCV({ ...cv, generalInfo: { ...generalInfo, lastName: e.target.value } })}
                     placeholder={"Hernandez"}
                 />
                 <Input
                     label={"Work title"}
                     name={"workTitle"}
-                    value={cv.workTitle}
-                    onChange={(e) => setCV({ ...cv, workTitle: e.target.value })}
+                    value={generalInfo.workTitle}
+                    onChange={(e) => setCV({ ...cv, generalInfo: { ...generalInfo, workTitle: e.target.value } })}
                     placeholder={"Attorney"}
                 />
                 <Input
                     label={"Email"}
-                    name={"workTitle"}
+                    name={"email"}
                     type="email"
-                    value={cv.email}
-                    onChange={(e) => setCV({ ...cv, email: e.target.value })}
+                    value={generalInfo.email}
+                    onChange={(e) => setCV({ ...cv, generalInfo: { ...generalInfo, email: e.target.value } })}
                     placeholder={"e@mail.com"}
                 />
                 <Input
                     label={"Phone number"}
                     name={"phone"}
                     type="phone"
-                    value={cv.phone}
-                    onChange={(e) => setCV({ ...cv, phone: e.target.value })}
+                    value={generalInfo.phone}
+                    onChange={(e) => setCV({ ...cv, generalInfo: { ...generalInfo, phone: e.target.value } })}
                     placeholder={"684168658"}
                 />
                 <Input
                     label={"Website"}
                     name={"website"}
                     type="url"
-                    value={cv.website}
-                    onChange={(e) => setCV({ ...cv, website: e.target.value })}
+                    value={generalInfo.website}
+                    onChange={(e) => setCV({ ...cv, generalInfo: { ...generalInfo, website: e.target.value } })}
                     placeholder={"https://mywebsite.com"}
                     suggestion={"Remember starting with https://."}
                 />

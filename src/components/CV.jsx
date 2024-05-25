@@ -11,24 +11,34 @@ export default function CV({ cv }) {
     const works = cv.works
     const educations = cv.educations
     const skills = cv.skills
+    const generalInfo = cv.generalInfo
 
-    const isEmpty = works.length === 0 && educations.length === 0 && skills.length === 0
+
+    const generalInfoEmpty = Object.values(generalInfo).every(entry => !!entry === false)
+
+    const isEmpty = works.length === 0 && educations.length === 0 && skills.length === 0 && generalInfoEmpty
+
 
     return (
 
         <main className="print:w-full overflow-y-auto flex-grow p-4 bg-white m-5 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300">
             {isEmpty ? <EmptyCV /> :
                 <>
-                    <section className="text-center">
-                        <h1 className="text-3xl">{`${cv.firstName} ${cv.lastName}`}</h1>
-                        <h2>{cv.workTitle}</h2>
-                        <div className="flex text-sm text-slate-400 gap-2 w-full justify-center">
-                            <p>{cv.email}</p>
-                            <p>{cv.phone}</p>
-                            <p><a href={cv.website} target='_blank' className="text-blue-400">{cv.website}</a></p>
-                        </div>
-                    </section>
-                    <hr />
+                    {!generalInfoEmpty &&
+                        <>
+                            <section className="text-center">
+                                <h1 className="text-3xl">{`${generalInfo.firstName} ${generalInfo.lastName}`}</h1>
+                                <h2>{generalInfo.workTitle}</h2>
+                                <div className="flex text-sm text-slate-400 gap-2 w-full justify-center">
+                                    <p>{generalInfo.email}</p>
+                                    <p>{generalInfo.phone}</p>
+                                    <p><a href={generalInfo.website} target='_blank' className="text-blue-400">{generalInfo.website}</a></p>
+                                </div>
+                            </section>
+                            <hr />
+                        </>
+
+                    }
                     {works.length > 0 && <>
                         <section>
                             <h2>Work experience</h2>
@@ -46,7 +56,8 @@ export default function CV({ cv }) {
 
 
                         </section>
-                        <hr /></>}
+                        <hr />
+                    </>}
 
 
                     {educations.length > 0 &&
