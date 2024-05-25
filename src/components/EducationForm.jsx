@@ -25,7 +25,6 @@ export default function EducationForm({ onSubmit, education }) {
                 onSubmit={(e) => {
                     e.preventDefault()
                     onSubmit(nextEducationInfo)
-
                     !isEditable && setNextEducationInfo({ ...emptyEducation })
 
                 }
@@ -66,7 +65,7 @@ export default function EducationForm({ onSubmit, education }) {
                     }}
                 />
 
-                <Button label={isEditable ? "Edit" : "Agregar Experiencia"}
+                <Button label={isEditable ? "Edit" : "Agregar Educación"}
                 />
             </form>
         </section>

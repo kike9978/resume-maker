@@ -6,7 +6,7 @@ import Textarea from "./Textarea"
 import WorkForm from "./WorkForm"
 import WorkFormItem from "./WorkFormItem"
 
-export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExperience, handleCreateExperience, isAddingEducation, setIsAddingEducation }) {
+export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExperience, handleCreateExperience, handleCreateEducation, isAddingEducation, setIsAddingEducation }) {
 
     const skills = cv.skills.map(skill => skill.title).join(", ")
 
@@ -109,7 +109,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
             <FormCard>
 
                 {isAddingEducation ?
-                    <EducationForm onSubmit={handleCreateExperience} /> :
+                    <EducationForm onSubmit={handleCreateEducation} /> :
                     <Button onClick={() => setIsAddingEducation(true)} label={"Add Education"} />
                 }
 

@@ -1,6 +1,7 @@
-export default function Button({ label, onClick }) {
+export default function Button({ label, onClick, hierarchy = "primary" }) {
+
     return (
-        <button className='print:hidden bg-black rounded text-white px-2'
+        <button className={`print:hidden rounded px-2 ${hierarchy === "primary" && "bg-black text-white"} ${hierarchy === "secondary" && "bg-slate-300 text-slate-700"}`}
             onClick={onClick}>
             {label}
         </button>
