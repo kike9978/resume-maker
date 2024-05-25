@@ -4,7 +4,7 @@ import Textarea from "./Textarea"
 import Button from "./Button"
 
 
-export default function WorkForm({ onSubmit, work }) {
+export default function WorkForm({ onSubmit, work, onCancelClick }) {
 
     const isEditable = work && true
 
@@ -21,7 +21,7 @@ export default function WorkForm({ onSubmit, work }) {
     return (
         <section className='border border-solid rounded-xl border-slate-200 p-2'>
             <form
-                className="flex flex-col"
+                className="flex flex-col gap-2"
                 onSubmit={(e) => {
                     e.preventDefault()
                     onSubmit(nextWorkInfo)
@@ -65,9 +65,12 @@ export default function WorkForm({ onSubmit, work }) {
                         setNextWorkInfo({ ...nextWorkInfo, date: e.target.value })
                     }}
                 />
+                <div className="flex gap-2 justify-between">
 
-                <Button label={isEditable ? "Edit" : "Agregar Experiencia"}
-                />
+                    <Button type={"button"} label={"Cancel"} hierarchy={"secondary"} onClick={onCancelClick} />
+                    <Button label={isEditable ? "Edit" : "Agregar Experiencia"}
+                    />
+                </div>
             </form>
         </section>
 

@@ -79,7 +79,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
             <FormCard>
 
                 {isAddingExperience ?
-                    <WorkForm onSubmit={handleCreateExperience} /> :
+                    <WorkForm onSubmit={handleCreateExperience} onCancelClick={() => setIsAddingExperience(false)} /> :
                     <Button onClick={() => setIsAddingExperience(true)} label={"Agregar experiencia"} />
                 }
 
@@ -144,7 +144,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                     name={"skills"}
                     value={skills}
                     onChange={handleOnSkillsChange}
-                    suggestion={`Add each skills separating them by a comma and a space (, ) `} />
+                    suggestion={`Add each skill separating them by a comma and a space (, ) `} />
 
             </FormCard>
 
