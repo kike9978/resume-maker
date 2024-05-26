@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import Button from "./Button"
 import EducationForm from "./EducationForm"
 import EducationFormItem from "./EducationFormItem"
@@ -88,9 +89,9 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                     <details open>
                         <summary>Details</summary>
                         {cv.works.map((work, index) =>
-                            <>
+                            <Fragment key={work.id}>
                                 <WorkFormItem
-                                    key={work.id}
+
                                     title={work.title}
                                     description={work.description}
                                     date={work.date}
@@ -102,7 +103,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
 
                                 />
                                 {cv.works.length - 1 > index && <hr />}
-                            </>
+                            </Fragment>
                         )}
 
                     </details>
@@ -120,9 +121,9 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                     <details open>
                         <summary>Details</summary>
                         {cv.educations.map((education, index) =>
-                            <>
+                            <Fragment key={education.id}>
                                 <EducationFormItem
-                                    key={education.id}
+
                                     title={education.title}
                                     date={education.date}
                                     institution={education.institution}
@@ -133,7 +134,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
 
                                 />
                                 {cv.educations.length - 1 > index && <hr />}
-                            </>
+                            </Fragment>
                         )}
 
                     </details>

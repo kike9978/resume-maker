@@ -68,7 +68,7 @@ export default function CV({ cv }) {
                                 {educations.map(education => {
                                     return (
                                         <EducationExperience
-                                            id={education.id}
+                                            key={education.id}
                                             title={education.title}
                                             institution={education.institution}
                                             date={education.date} />
