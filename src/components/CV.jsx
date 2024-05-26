@@ -21,7 +21,7 @@ export default function CV({ cv }) {
 
     return (
 
-        <main className="print:w-full overflow-y-auto flex-grow p-4 bg-white m-5 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300">
+        <main className="print:w-full overflow-y-auto flex-grow p-4 bg-white m-5 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 w-full">
             {isEmpty ? <EmptyCV /> :
                 <>
                     {!generalInfoEmpty &&

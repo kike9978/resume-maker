@@ -25,11 +25,13 @@ export default function WorkFormItem({ title, company, date, description, id, se
     return (
         <article className="flex justify-between p-4">
             {isEditable ?
-                <WorkForm work={work} onSubmit={handleWorkEdit} />
+                <WorkForm work={work} onSubmit={handleWorkEdit} onCancelClick={() => setIsEditable(false)} />
                 :
                 <p>{title}</p>
             }
-            <Button label={isEditable ? "Cancel" : "Edit"} onClick={() => setIsEditable(!isEditable)} />
+
+            {!isEditable && <Button label={"Edit"} onClick={() => setIsEditable(true)} />}
+            {/* <Button label={isEditable ? "Cancel" : "Edit"} onClick={() => setIsEditable(!isEditable)} /> */}
         </article>
     )
 }

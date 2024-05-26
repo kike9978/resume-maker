@@ -36,32 +36,37 @@ const mockData = {
       id: nextId++,
       title: "UX designer",
       company: "Sisu Technologies",
-      description: "Es hora de los besos de chocolate",
-      date: "2022 - 2024"
+      description: "I am an essential contributor to UX design projects, collaborating across diverse teams to improve web applications for agricultural enterprises and create innovative features for a versatile marketing app used by businesses and organizations. Engaging closely with development and design teams, I actively contribute throughout various phases of the design process and Agile methodology. My expertise includes designing seamless user experiences for mobile and web platforms, leveraging HTML, CSS, Sass, Javascript, and React to build UI components. Additionally, I utilize component libraries like PrimeReact to enhance efficiency and maintain consistency in development. Freelanc",
+      date: "August 2022 - March 2024"
     },
     {
       id: nextId++,
       title: "UX designer",
       company: "Freelancer",
-      description: "Es hora de los besos de chocolate",
-      date: ""
+      description: "During my freelance tenure, I remotely designed interactive navbar interactions for a travel agency website and created visually appealing 3D character models for an electricity business mascot.",
+      date: "January 2020 - August 2022"
     },
     {
       id: nextId++,
-      title: "UX designer",
-      company: "Sisu Technologies",
-      description: "Es hora de los besos de chocolate",
-      date: ""
-    },
-    {
-      id: nextId++,
-      title: "UX designer",
-      company: "Sisu Technologies",
-      description: "Es hora de los besos de chocolate",
-      date: ""
+      title: "Pekxel Studio",
+      company: "UX Designer intern",
+      description: "As a UX Designer intern, I produced engaging animations and 3D character models for landing pages, while also contributing to UX research initiatives at a museum to improve visitor experience.",
+      date: "January 2019 - May 2019"
     },
   ],
-  educations: [{ id: 0, title: "Diseño de interación y animación", institution: "Ibero Puebla", degree: "BA", date: "2015 - 2019" }],
+  educations: [
+    {
+      id: 0,
+      title: "Full Stack Web Developer",
+      institution: "The Odin Project",
+      date: "2015 - 2019"
+    },
+    {
+      id: 1,
+      title: "Diseño de interación y animación",
+      institution: "Ibero Puebla",
+      date: "2015 - 2019"
+    }],
   skills: [
     {
       id: 0,
@@ -151,7 +156,7 @@ function App() {
       }]
     })
 
-    setIsAddingExperience(false)
+    setIsAddingEducation(false)
   }
 
   return (
@@ -162,7 +167,7 @@ function App() {
         <div className="flex gap-2">
           <Button onClick={() => setCV({ ...mockData })} label={"Fill with mockup data"} hierarchy="secondary" />
           <Button onClick={() => setCV({ ...initialCV })} label={"Empty form"} hierarchy='secondary' />
-          <Button onClick={() => setIsEditing(!isEditing)} label={isEditing ? "Save" : "Edit"} hierarchy='secondary' />
+          {/* <Button onClick={() => setIsEditing(!isEditing)} label={isEditing ? "Save" : "Edit"} hierarchy='secondary' /> */}
         </div>
         <Button onClick={() => window.print()} label={"Imprimir"} />
       </div>

@@ -19,15 +19,13 @@ export default function WorkForm({ onSubmit, work, onCancelClick }) {
 
 
     return (
-        <section className='border border-solid rounded-xl border-slate-200 p-2'>
+        <section className='border border-solid rounded-xl border-slate-200 p-2 w-full'>
             <form
                 className="flex flex-col gap-2"
                 onSubmit={(e) => {
                     e.preventDefault()
                     onSubmit(nextWorkInfo)
-
                     !isEditable && setNextWorkInfo({ ...emptyWork })
-
                 }
                 }>
 
@@ -68,7 +66,7 @@ export default function WorkForm({ onSubmit, work, onCancelClick }) {
                 <div className="flex gap-2 justify-between">
 
                     <Button type={"button"} label={"Cancel"} hierarchy={"secondary"} onClick={onCancelClick} />
-                    <Button label={isEditable ? "Edit" : "Agregar Experiencia"}
+                    <Button label={isEditable ? "Save" : "Add experience"}
                     />
                 </div>
             </form>

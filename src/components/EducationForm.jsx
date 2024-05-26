@@ -21,7 +21,7 @@ export default function EducationForm({ onSubmit, education }) {
     return (
         <section className='border border-solid rounded-xl border-slate-200 p-2'>
             <form
-                className="flex flex-col"
+                className="flex flex-col gap-2"
                 onSubmit={(e) => {
                     e.preventDefault()
                     onSubmit(nextEducationInfo)
@@ -65,7 +65,7 @@ export default function EducationForm({ onSubmit, education }) {
                     }}
                 />
 
-                <Button label={isEditable ? "Edit" : "Agregar Educación"}
+                <Button label={isEditable ? "Edit" : "Add education"}
                 />
             </form>
         </section>

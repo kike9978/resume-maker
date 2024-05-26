@@ -9,6 +9,8 @@ import WorkFormItem from "./WorkFormItem"
 export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExperience, handleCreateExperience, handleCreateEducation, isAddingEducation, setIsAddingEducation }) {
 
     const skills = cv.skills.map(skill => skill.title).join(", ")
+    const educations = cv.educations;
+    const works = cv.works
     const generalInfo = cv.generalInfo;
 
 
@@ -78,62 +80,68 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
 
             <FormCard>
 
+                <h2>Work experience</h2>
+
+                {works.length > 0 &&
+
+                    <details open>
+                        <summary>Details</summary>
+                        {cv.works.map((work, index) =>
+                            <>
+                                <WorkFormItem
+                                    key={work.id}
+                                    title={work.title}
+                                    description={work.description}
+                                    date={work.date}
+                                    company={work.company}
+                                    id={work.id}
+                                    setCV={setCV}
+                                    cv={cv}
+
+
+                                />
+                                {cv.works.length - 1 > index && <hr />}
+                            </>
+                        )}
+
+                    </details>
+                }
                 {isAddingExperience ?
                     <WorkForm onSubmit={handleCreateExperience} onCancelClick={() => setIsAddingExperience(false)} /> :
-                    <Button onClick={() => setIsAddingExperience(true)} label={"Agregar experiencia"} />
+                    <Button onClick={() => setIsAddingExperience(true)} label={"Add experience"} />
                 }
-
-                <details>
-                    <summary>Work Experience</summary>
-                    {cv.works.map((work, index) =>
-                        <>
-                            <WorkFormItem
-                                key={work.id}
-                                title={work.title}
-                                description={work.description}
-                                date={work.date}
-                                company={work.company}
-                                id={work.id}
-                                setCV={setCV}
-                                cv={cv}
-
-
-                            />
-                            {cv.works.length - 1 > index && <hr />}
-                        </>
-                    )}
-
-                </details>
-
             </FormCard>
             <FormCard>
 
+                <h2>Education</h2>
+
+                {educations.length > 0 &&
+                    <details open>
+                        <summary>Details</summary>
+                        {cv.educations.map((education, index) =>
+                            <>
+                                <WorkFormItem
+                                    key={education.id}
+                                    title={education.title}
+                                    description={education.description}
+                                    date={education.date}
+                                    company={education.company}
+                                    id={education.id}
+                                    setCV={setCV}
+                                    cv={cv}
+
+
+                                />
+                                {cv.educations.length - 1 > index && <hr />}
+                            </>
+                        )}
+
+                    </details>
+                }
                 {isAddingEducation ?
                     <EducationForm onSubmit={handleCreateEducation} /> :
                     <Button onClick={() => setIsAddingEducation(true)} label={"Add Education"} />
                 }
-
-                <details>
-                    <summary>Education</summary>
-                    {cv.educations.map((education, index) =>
-                        <>
-                            <WorkFormItem
-                                key={education.id}
-                                title={education.title}
-                                description={education.description}
-                                date={education.date}
-                                company={education.company}
-                                id={education.id}
-                                setCV={setCV}
-                                cv={cv}
-
-
-                            />
-                            {cv.educations.length - 1 > index && <hr />}
-                        </>
-                    )}
-
-                </details>
 
             </FormCard>
 
