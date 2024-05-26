@@ -10,8 +10,7 @@ export default function EducationForm({ onSubmit, education }) {
 
     const emptyEducation = {
         title: "",
-        company: "",
-        description: "",
+        institution: "",
         date: ""
     }
 
@@ -19,7 +18,7 @@ export default function EducationForm({ onSubmit, education }) {
 
 
     return (
-        <section className='border border-solid rounded-xl border-slate-200 p-2'>
+        <section className='border border-solid rounded-xl border-slate-200 p-2 w-full'>
             <form
                 className="flex flex-col gap-2"
                 onSubmit={(e) => {
@@ -39,20 +38,11 @@ export default function EducationForm({ onSubmit, education }) {
                     }}
                 />
                 <Input
-                    label={"Company"}
-                    name={"company"}
-                    value={nextEducationInfo.company}
+                    label={"Insitution"}
+                    name={"institution"}
+                    value={nextEducationInfo.institution}
                     onChange={(e) => {
-                        setNextEducationInfo({ ...nextEducationInfo, company: e.target.value })
-                    }}
-                />
-
-                <Textarea
-                    label={"Description"}
-                    name={"description"}
-                    value={nextEducationInfo.description}
-                    onChange={(e) => {
-                        setNextEducationInfo({ ...nextEducationInfo, description: e.target.value })
+                        setNextEducationInfo({ ...nextEducationInfo, institution: e.target.value })
                     }}
                 />
 

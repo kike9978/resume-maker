@@ -1,3 +1,4 @@
+import EducationExperience from "./EducationExperience"
 import WorkExperience from "./WorkExperience"
 
 function EmptyCV() {
@@ -66,7 +67,11 @@ export default function CV({ cv }) {
                                 <h2>Education</h2>
                                 {educations.map(education => {
                                     return (
-                                        <div key={education.id}>{education.title}</div>
+                                        <EducationExperience
+                                            id={education.id}
+                                            title={education.title}
+                                            institution={education.institution}
+                                            date={education.date} />
                                     )
                                 })}
 

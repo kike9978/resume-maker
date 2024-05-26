@@ -1,5 +1,6 @@
 import Button from "./Button"
 import EducationForm from "./EducationForm"
+import EducationFormItem from "./EducationFormItem"
 import FormCard from "./FormCard"
 import Input from "./Input"
 import Textarea from "./Textarea"
@@ -120,12 +121,11 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
                         <summary>Details</summary>
                         {cv.educations.map((education, index) =>
                             <>
-                                <WorkFormItem
+                                <EducationFormItem
                                     key={education.id}
                                     title={education.title}
-                                    description={education.description}
                                     date={education.date}
-                                    company={education.company}
+                                    institution={education.institution}
                                     id={education.id}
                                     setCV={setCV}
                                     cv={cv}
