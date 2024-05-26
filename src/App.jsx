@@ -36,7 +36,7 @@ const mockData = {
       id: nextId++,
       title: "UX designer",
       company: "Sisu Technologies",
-      description: "I am an essential contributor to UX design projects, collaborating across diverse teams to improve web applications for agricultural enterprises and create innovative features for a versatile marketing app used by businesses and organizations. Engaging closely with development and design teams, I actively contribute throughout various phases of the design process and Agile methodology. My expertise includes designing seamless user experiences for mobile and web platforms, leveraging HTML, CSS, Sass, Javascript, and React to build UI components. Additionally, I utilize component libraries like PrimeReact to enhance efficiency and maintain consistency in development. Freelanc",
+      description: "I am an essential contributor to UX design projects, collaborating across diverse teams to improve web applications for agricultural enterprises and create innovative features for a versatile marketing app used by businesses and organizations. Engaging closely with development and design teams, I actively contribute throughout various phases of the design process and Agile methodology. My expertise includes designing seamless user experiences for mobile and web platforms, leveraging HTML, CSS, Sass, Javascript, and React to build UI components. Additionally, I utilize component libraries like PrimeReact to enhance efficiency and maintain consistency in development.",
       date: "August 2022 - March 2024"
     },
     {
@@ -48,8 +48,8 @@ const mockData = {
     },
     {
       id: nextId++,
-      title: "Pekxel Studio",
-      company: "UX Designer intern",
+      title: "UX Designer intern",
+      company: "Pekxel Studio",
       description: "As a UX Designer intern, I produced engaging animations and 3D character models for landing pages, while also contributing to UX research initiatives at a museum to improve visitor experience.",
       date: "January 2019 - May 2019"
     },
@@ -162,18 +162,18 @@ function App() {
   return (
     <>
       <h1
-        className='text-cyan-700 font-bold text-2xl print:hidden'>Resumé maker</h1>
-      <div className="flex justify-between">
+        className='text-cyan-900 font-bold text-4xl print:hidden mx-4 my-2'>Resumé maker</h1>
+      <div className="flex justify-between mx-5">
         <div className="flex gap-2">
           <Button onClick={() => setCV({ ...mockData })} label={"Fill with mockup data"} hierarchy="secondary" />
-          <Button onClick={() => setCV({ ...initialCV })} label={"Empty form"} hierarchy='secondary' />
+          <Button onClick={() => setCV({ ...initialCV })} label={"Clear form"} hierarchy='secondary' />
           {/* <Button onClick={() => setIsEditing(!isEditing)} label={isEditing ? "Save" : "Edit"} hierarchy='secondary' /> */}
         </div>
-        <Button onClick={() => window.print()} label={"Imprimir"} />
+        <Button onClick={() => window.print()} label={"Print"} />
       </div>
 
 
-      <div className="flex flex-grow overflow-hidden flex-col sm:flex-row">
+      <div className="flex flex-grow overflow-hidden  flex-col sm:flex-row">
         {isEditing &&
 
           <CVForm

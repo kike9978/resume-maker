@@ -2,7 +2,7 @@ export default function EducationExperience({ title, institution, date }) {
 
 
     return (
-        <article className="py-10">
+        <article className="py-5">
             <div className="flex items-baseline justify-between">
                 <div className="flex flex-col">
                     <h3 className="text-xl">

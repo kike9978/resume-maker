@@ -22,7 +22,7 @@ export default function CV({ cv }) {
 
     return (
 
-        <main className="print:w-full overflow-y-auto flex-grow p-4 bg-white m-5 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 w-full">
+        <main className="print:w-full overflow-y-auto flex-grow p-4 bg-white m-5  w-full print:overflow-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 print:scrollbar-none">
             {isEmpty ? <EmptyCV /> :
                 <>
                     {!generalInfoEmpty &&
@@ -42,7 +42,7 @@ export default function CV({ cv }) {
                     }
                     {works.length > 0 && <>
                         <section>
-                            <h2>Work experience</h2>
+                            <h2 className="mt-2">Work experience</h2>
                             {works.map(work => {
                                 return (
                                     <WorkExperience
@@ -64,7 +64,7 @@ export default function CV({ cv }) {
                     {educations.length > 0 &&
                         <>
                             <section>
-                                <h2>Education</h2>
+                                <h2 className="mt-2">Education</h2>
                                 {educations.map(education => {
                                     return (
                                         <EducationExperience
@@ -83,8 +83,8 @@ export default function CV({ cv }) {
 
 
                     {skills.length > 0 && <section>
-                        <h2>Skills:</h2>
-                        <div className="flex gap-2 flex-wrap">
+                        <h2 className="mt-2">Skills</h2>
+                        <div className="flex gap-2 flex-wrap mt-4">
                             {skills.map(skill => {
                                 return <p key={skill.id} className="bg-slate-100 text-slate-800 rounded-2xl border border-solid border-slate-700 px-2 py-1">{skill.title}</p>
                             })}

@@ -30,7 +30,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
             className='flex flex-col m-5 print:hidden overflow-y-auto gap-6 basis-4/5 max-w-96 pb-4'>
             <FormCard >
 
-                <h2>General information</h2>
+                <h2 className="text-xl">General information</h2>
                 <Input
                     label={"First name(s)"}
                     name={"firstName"}
@@ -81,7 +81,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
 
             <FormCard>
 
-                <h2>Work experience</h2>
+                <h2 className="text-xl">Work experience</h2>
 
                 {works.length > 0 &&
 
@@ -114,7 +114,7 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
             </FormCard>
             <FormCard>
 
-                <h2>Education</h2>
+                <h2 className="text-xl">Education</h2>
 
                 {educations.length > 0 &&
                     <details open>
@@ -146,9 +146,9 @@ export default function CVForm({ setCV, cv, isAddingExperience, setIsAddingExper
             </FormCard>
 
             <FormCard>
-
+                <h2 className="text-xl">Skills</h2>
                 <Textarea
-                    label={"Skills"}
+                    label={"Your skills"}
                     name={"skills"}
                     value={skills}
                     onChange={handleOnSkillsChange}
